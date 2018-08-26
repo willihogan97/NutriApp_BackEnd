@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface ProteinMapper {
-    @Insert("Insert into tblprotein (id, nama, tipe, urt, karbohidrat, protein, lemat, kalori) values " + "(#{id}, #{nama}, " +
+    @Insert("Insert into tblprotein (id, nama, tipe, urt, karbohidrat, protein, lemak, kalori) values " + "(#{id}, #{nama}, " +
             "#{tipe}, #{urt}, #{karbohidrat}, #{protein}, #{lemak}, #{kalori})")
     void addProtein(ProteinModel proteinModel);
 

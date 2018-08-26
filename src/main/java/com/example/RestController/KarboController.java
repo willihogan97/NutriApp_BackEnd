@@ -5,11 +5,8 @@ import com.example.Service.KarbohidratService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import com.example.Service.StudentService;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -19,9 +16,6 @@ import java.util.Map;
 @RequestMapping("/api")
 public class KarboController
 {
-    @Autowired
-    StudentService studentDAO;
-
     @Autowired
     KarbohidratService karbohidratService;
 
@@ -48,17 +42,8 @@ public class KarboController
     }
 
     @PostMapping("/karbohidrat/add")
-    public KarbohidratModel add(@ModelAttribute KarbohidratModel karbohidratModel, Model model){
+    public KarbohidratModel add(@RequestBody KarbohidratModel karbohidratModel, Model model){
         karbohidratService.addKarbohidrat(karbohidratModel);
         return karbohidratModel;
-    }
-
-    @RequestMapping("/asd")
-    public String index (Model model)
-    {
-        String asdf = studentDAO.test();
-        System.out.println(asdf);
-        model.addAttribute(asdf);
-        return "index";
     }
 }

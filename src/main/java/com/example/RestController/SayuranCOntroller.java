@@ -42,7 +42,7 @@ public class SayuranCOntroller {
     }
 
     @PostMapping("/sayuran/add")
-    public SayuranModel add(@ModelAttribute SayuranModel sayuranModel, Model model){
+    public SayuranModel add(@RequestBody SayuranModel sayuranModel, Model model){
         sayuranService.addSayuran(sayuranModel);
         return sayuranModel;
     }

@@ -41,7 +41,7 @@ public class LemakController {
     }
 
     @PostMapping("/lemak/add")
-    public LemakModel add(@ModelAttribute LemakModel lemakModel, Model model){
+    public LemakModel add(@RequestBody LemakModel lemakModel, Model model){
         lemakService.addLemak(lemakModel);
         return lemakModel;
     }

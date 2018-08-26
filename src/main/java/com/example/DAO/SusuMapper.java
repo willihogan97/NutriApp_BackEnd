@@ -7,11 +7,11 @@ import java.util.List;
 
 @Mapper
 public interface SusuMapper {
-    @Insert("Insert into tblsusu (id, nama, tipe, urt, karbohidrat, protein, lemat, kalori) values " + "(#{id}, #{nama}, " +
+    @Insert("Insert into tblsusu (id, nama, tipe, urt, karbohidrat, protein, lemak, kalori) values " + "(#{id}, #{nama}, " +
             "#{tipe}, #{urt}, #{karbohidrat}, #{protein}, #{lemak}, #{kalori})")
     void addSusu(SusuModel susuModel);
 
-    @Select("Select * from tblprotein")
+    @Select("Select * from tblsusu")
     List<SusuModel> getAllSusu();
 
 }

@@ -41,7 +41,7 @@ public class BuahGulaController {
     }
 
     @PostMapping("/buahgula/add")
-    public BuahGulaModel add(@ModelAttribute BuahGulaModel buahGulaModel, Model model){
+    public BuahGulaModel add(@RequestBody BuahGulaModel buahGulaModel, Model model){
         buahGulaService.addBuahGula(buahGulaModel);
         return buahGulaModel;
     }

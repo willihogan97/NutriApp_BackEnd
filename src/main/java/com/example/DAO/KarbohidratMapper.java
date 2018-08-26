@@ -7,11 +7,11 @@ import java.util.List;
 
 @Mapper
 public interface KarbohidratMapper {
-    @Insert("Insert into tblkarbohidrat (id, nama, tipe, urt, karbohidrat, protein, lemat, kalori) values " + "(#{id}, #{nama}, " +
+    @Insert("Insert into tblkarbohidrat (id, nama, tipe, urt, karbohidrat, protein, lemak, kalori) values " + "(#{id}, #{nama}, " +
             "#{tipe}, #{urt}, #{karbohidrat}, #{protein}, #{lemak}, #{kalori})")
     void addKarbohidrat(KarbohidratModel karbohidratModel);
 
-    @Select("Select * from tblprotein")
+    @Select("Select * from tblkarbohidrat")
     List<KarbohidratModel> getAllKarbohidrat();
 
 }

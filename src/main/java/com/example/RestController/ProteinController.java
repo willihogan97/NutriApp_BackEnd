@@ -40,8 +40,8 @@ public class ProteinController {
         return ResponseEntity.status((Integer) responseJSON.get("status")).body(responseJSON);
     }
 
-    @PostMapping("/susu/add")
-    public ProteinModel add(@ModelAttribute ProteinModel proteinModel, Model model){
+    @PostMapping("/protein/add")
+    public ProteinModel add(@RequestBody ProteinModel proteinModel, Model model){
         proteinService.addProtein(proteinModel);
         return proteinModel;
     }

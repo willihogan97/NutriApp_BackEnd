@@ -42,7 +42,7 @@ public class SusuController {
     }
 
     @PostMapping("/susu/add")
-    public SusuModel add(@ModelAttribute SusuModel susuModel, Model model){
+    public SusuModel add(@RequestBody SusuModel susuModel, Model model){
         susuService.addSusu(susuModel);
         return susuModel;
     }

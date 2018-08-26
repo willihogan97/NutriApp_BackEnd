@@ -7,11 +7,11 @@ import java.util.List;
 
 @Mapper
 public interface BuahGulaMapper {
-    @Insert("Insert into tblbuahgula (id, nama, tipe, urt, karbohidrat, protein, lemat, kalori) values " + "(#{id}, #{nama}, " +
+    @Insert("Insert into tblbuahgula (id, nama, tipe, urt, karbohidrat, protein, lemak, kalori) values " + "(#{id}, #{nama}, " +
             "#{tipe}, #{urt}, #{karbohidrat}, #{protein}, #{lemak}, #{kalori})")
     void addBuahGula(BuahGulaModel buahGulaModel);
 
-    @Select("Select * from tblprotein")
+    @Select("Select * from tblbuahgula")
     List<BuahGulaModel> getAllBuahGula();
 
 }

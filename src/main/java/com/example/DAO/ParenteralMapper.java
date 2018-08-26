@@ -7,11 +7,11 @@ import java.util.List;
 
 @Mapper
 public interface ParenteralMapper {
-    @Insert("Insert into tblparenteral (id, nama, tipe, urt, karbohidrat, protein, lemat, kalori) values " + "(#{id}, #{nama}, " +
-            "#{tipe}, #{urt}, #{karbohidrat}, #{protein}, #{lemak}, #{kalori})")
+    @Insert("Insert into tblparenteral (id, nama, karbohidrat, protein, lemak, elektrolit, kalori) values " + "(#{id}, #{nama}, " +
+            "#{karbohidrat}, #{protein}, #{lemak}, #{elektrolit}, #{kalori})")
     void addParenteral(ParenteralModel parenteralModel);
 
-    @Select("Select * from tblprotein")
+    @Select("Select * from tblparenteral")
     List<ParenteralModel> getAllParenteral();
 
 }

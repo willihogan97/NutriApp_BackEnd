@@ -41,7 +41,7 @@ public class MinyakController {
     }
 
     @PostMapping("/minyak/add")
-    public MinyakModel add(@ModelAttribute MinyakModel minyakModel, Model model){
+    public MinyakModel add(@RequestBody MinyakModel minyakModel, Model model){
         minyakService.addMinyak(minyakModel);
         return minyakModel;
     }

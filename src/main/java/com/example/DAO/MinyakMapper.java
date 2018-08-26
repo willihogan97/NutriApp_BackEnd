@@ -7,10 +7,10 @@ import java.util.List;
 
 @Mapper
 public interface MinyakMapper {
-    @Insert("Insert into tblMinyak (id, nama, tipe, urt, karbohidrat, protein, lemat, kalori) values " + "(#{id}, #{nama}, " +
+    @Insert("Insert into tblminyak (id, nama, tipe, urt, karbohidrat, protein, lemak, kalori) values " + "(#{id}, #{nama}, " +
             "#{tipe}, #{urt}, #{karbohidrat}, #{protein}, #{lemak}, #{kalori})")
     void addMinyak(MinyakModel minyakModel);
 
-    @Select("Select * from tblprotein")
+    @Select("Select * from tblminyak")
     List<MinyakModel> getAllMinyak();
 }

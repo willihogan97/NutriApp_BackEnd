@@ -42,7 +42,7 @@ public class ParenteralController {
     }
 
     @PostMapping("/parenteral/add")
-    public ParenteralModel add(@ModelAttribute ParenteralModel parenteralModel, Model model){
+    public ParenteralModel add(@RequestBody ParenteralModel parenteralModel, Model model){
         parenteralService.addParenteral(parenteralModel);
         return parenteralModel;
     }
