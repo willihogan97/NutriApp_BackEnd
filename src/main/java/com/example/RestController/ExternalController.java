@@ -1,33 +1,35 @@
 package com.example.RestController;
 
-import com.example.Model.SayuranModel;
-import com.example.Service.SayuranService;
+import com.example.Model.ExternalModel;
+import com.example.Service.ExternalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@RestController
-@RequestMapping("/api")
-public class SayuranCOntroller {
-
+public class ExternalController {
     @Autowired
-    SayuranService sayuranService;
+    ExternalService externalService;
 
-    @GetMapping("/sayuran/all")
-    public ResponseEntity<Object> getAll(Model model){
+    @PostMapping("/external/add")
+    public ExternalModel add(@RequestBody ExternalModel externalModel){
+        externalService.addExternal(externalModel);
+        return externalModel;
+    }
+
+    @GetMapping("/external/all")
+    public ResponseEntity<Object> getAll(){
         Map<String, Object> responseJSON = new LinkedHashMap<>();
         try {
-            List<SayuranModel> list = sayuranService.getAllSayuran();
+            List<ExternalModel> list = externalService.getAllExternal();
             System.out.println(list);
             if(list.size() == 0) {
                 responseJSON.put("status", HttpStatus.NOT_FOUND.value());
-                responseJSON.put("msg", "tidak ada sayuran");
+                responseJSON.put("msg", "tidak ada makanan external");
             }else {
                 responseJSON.put("status", HttpStatus.OK.value());
                 responseJSON.put("msg", "success");
@@ -40,11 +42,4 @@ public class SayuranCOntroller {
         }
         return ResponseEntity.status((Integer) responseJSON.get("status")).body(responseJSON);
     }
-
-    @PostMapping("/sayuran/add")
-    public SayuranModel add(@RequestBody SayuranModel sayuranModel, Model model){
-        sayuranService.addSayuran(sayuranModel);
-        return sayuranModel;
-    }
-
 }

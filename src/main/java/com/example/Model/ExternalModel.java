@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class KarbohidratModel {
+public class ExternalModel {
     private int id;
     private String nama;
     private int tipe;
