@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface ExternalMapper {
-    @Insert("Insert into tblexternal (id, nama, tipe, urt, karbohidrat, protein, lemak, kalori) values " + "(#{id}, #{nama}, " +
+    @Insert("Insert into tblexternal (nama, tipe, urt, karbohidrat, protein, lemak, kalori) values " + "(#{nama}, " +
             "#{tipe}, #{urt}, #{karbohidrat}, #{protein}, #{lemak}, #{kalori})")
     void addExternal(ExternalModel externalModel);
 
