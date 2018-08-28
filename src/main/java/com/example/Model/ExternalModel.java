@@ -11,7 +11,7 @@ public class ExternalModel {
     private int id;
     private String nama;
     private int tipe;
-    private String urt;
+    private double urt;
     private double karbohidrat;
     private double protein;
     private double lemak;
@@ -41,11 +41,11 @@ public class ExternalModel {
         this.tipe = tipe;
     }
 
-    public String getUrt() {
+    public double getUrt() {
         return urt;
     }
 
-    public void setUrt(String urt) {
+    public void setUrt(double urt) {
         this.urt = urt;
     }
 
