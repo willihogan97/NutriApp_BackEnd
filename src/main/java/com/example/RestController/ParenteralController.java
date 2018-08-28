@@ -1,12 +1,10 @@
 package com.example.RestController;
 
-import com.example.DAO.ParenteralMapper;
 import com.example.Model.ParenteralModel;
 import com.example.Service.ParenteralService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
@@ -20,7 +18,7 @@ public class ParenteralController {
     ParenteralService parenteralService;
 
     @GetMapping("/parenteral/all")
-    public ResponseEntity<Object> getAll(Model model){
+    public ResponseEntity<Object> getAll(){
         Map<String, Object> responseJSON = new LinkedHashMap<>();
         try {
             List<ParenteralModel> list = parenteralService.getAllParenteral();
@@ -42,7 +40,7 @@ public class ParenteralController {
     }
 
     @PostMapping("/parenteral/add")
-    public ParenteralModel add(@RequestBody ParenteralModel parenteralModel, Model model){
+    public ParenteralModel add(@RequestBody ParenteralModel parenteralModel){
         parenteralService.addParenteral(parenteralModel);
         return parenteralModel;
     }
