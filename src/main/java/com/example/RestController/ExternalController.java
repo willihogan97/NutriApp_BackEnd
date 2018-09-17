@@ -44,4 +44,16 @@ public class ExternalController {
         }
         return ResponseEntity.status((Integer) responseJSON.get("status")).body(responseJSON);
     }
+
+
+    @PostMapping("/external/delete/{id}")
+    public void delete(@PathVariable(value = "id") int id){
+        externalService.deleteExternal(id);
+    }
+
+    @PostMapping("/external/update")
+    public ExternalModel update(@RequestBody ExternalModel externalModel){
+        externalService.updateExternal(externalModel);
+        return externalModel;
+    }
 }

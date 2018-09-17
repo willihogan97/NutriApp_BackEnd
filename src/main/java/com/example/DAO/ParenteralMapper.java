@@ -14,4 +14,11 @@ public interface ParenteralMapper {
     @Select("Select * from tblparenteral")
     List<ParenteralModel> getAllParenteral();
 
+    @Delete("Delete from tblparenteral where id = #{id}")
+    void deleteParenteral(int id);
+
+    @Update("Update tblparenteral set nama = #{nama}, karbohidrat = #{karbohidrat}, protein = #{protein}, " +
+            "lemak = #{lemak}, elektrolit = #{elektrolit}, kalori = #{kalori} where id = #{id}")
+    void updateParenteral(ParenteralModel parenteralModel);
+
 }

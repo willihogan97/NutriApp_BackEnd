@@ -14,4 +14,11 @@ public interface ExternalMapper {
     @Select("Select * from tblexternal")
     List<ExternalModel> getAllExternal();
 
+    @Delete("Delete from tblexternal where id = #{id}")
+    void deleteExternal(int id);
+
+    @Update("Update tblexternal set nama = #{nama}, tipe = #{tipe}, urt = #{urt}, " +
+            "karbohidrat = #{karbohidrat}, protein = #{protein}, lemak = #{lemak}, kalori = #{kalori} where id = #{id}")
+    void updateExternal(ExternalModel externalModel);
+
 }

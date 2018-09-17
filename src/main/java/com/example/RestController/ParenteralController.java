@@ -44,4 +44,15 @@ public class ParenteralController {
         parenteralService.addParenteral(parenteralModel);
         return parenteralModel;
     }
+
+    @PostMapping("/parenteral/delete/{id}")
+    public void delete(@PathVariable(value = "id") int id){
+        parenteralService.deleteParenteral(id);
+    }
+
+    @PostMapping("/parenteral/update")
+    public ParenteralModel update(@RequestBody ParenteralModel parenteralModel){
+        parenteralService.updateParenteral(parenteralModel);
+        return parenteralModel;
+    }
 }

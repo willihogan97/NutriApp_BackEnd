@@ -22,4 +22,10 @@ public class ExternalServiceDatatabase implements ExternalService {
     public List<ExternalModel> getAllExternal() {
         return externalMapper.getAllExternal();
     }
+
+    @Override
+    public void deleteExternal(int id) { externalMapper.deleteExternal(id); }
+
+    @Override
+    public void updateExternal(ExternalModel externalModel) { externalMapper.updateExternal(externalModel); }
 }
