@@ -7,8 +7,8 @@ import java.util.List;
 
 @Mapper
 public interface ParenteralMapper {
-    @Insert("Insert into tblparenteral (nama, karbohidrat, protein, lemak, elektrolit, kalori) values " + "(#{nama}, " +
-            "#{karbohidrat}, #{protein}, #{lemak}, #{elektrolit}, #{kalori})")
+    @Insert("Insert into tblparenteral (nama, karbohidrat, volume, protein, lemak, elektrolit, kalori) values " + "(#{nama}, " +
+            "#{karbohidrat}, #{volume}, #{protein}, #{lemak}, #{elektrolit}, #{kalori})")
     void addParenteral(ParenteralModel parenteralModel);
 
     @Select("Select * from tblparenteral")
@@ -17,7 +17,7 @@ public interface ParenteralMapper {
     @Delete("Delete from tblparenteral where id = #{id}")
     void deleteParenteral(int id);
 
-    @Update("Update tblparenteral set nama = #{nama}, karbohidrat = #{karbohidrat}, protein = #{protein}, " +
+    @Update("Update tblparenteral set nama = #{nama}, karbohidrat = #{karbohidrat}, protein = #{protein}, volume = #{volume}, " +
             "lemak = #{lemak}, elektrolit = #{elektrolit}, kalori = #{kalori} where id = #{id}")
     void updateParenteral(ParenteralModel parenteralModel);
 

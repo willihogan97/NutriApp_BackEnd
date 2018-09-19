@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class ParenteralModel {
     private int id;
     private String nama;
+    private double volume;
     private double karbohidrat;
     private double protein;
     private double lemak;
@@ -71,4 +72,8 @@ public class ParenteralModel {
     public void setKalori(double kalori) {
         this.kalori = kalori;
     }
+
+    public double getVolume() { return volume; }
+
+    public void setVolume(double volume) { this.volume = volume; }
 }
